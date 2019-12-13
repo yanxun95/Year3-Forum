@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/imageList"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/linkList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/nameList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageList"
+        android:text="@string/event_name"
+        android:layout_below="@id/linkList"
+        android:paddingBottom="1dip"
+        android:textSize="18dp"
+        android:textColor="#212121"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/addressList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageList"
+        android:text="@string/event_address"
+        android:layout_below="@id/nameList"
+        android:paddingBottom="1dip"/>
+
+    <TextView
+        android:id="@+id/dateList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageList"
+        android:text="@string/event_date"
+        android:layout_below="@id/addressList"
+        android:textColor="#93ccea"/>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "343370750024",
+    "firebase_url": "https://real-gamer-hours.firebaseio.com",
+    "project_id": "real-gamer-hours",
+    "storage_bucket": "real-gamer-hours.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343370750024:android:b30a85463a25a98de0207d",
+        "android_client_info": {
+          "package_name": "com.example.realgamerhours"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343370750024-a1bu64uetm7q2c2bguhmnbuqsm8576km.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.realgamerhours",
+            "certificate_hash": "a2b4071d4a0e57835b38394fbbce0d537c62236f"
+          }
+        },
+        {
+          "client_id": "343370750024-0kinm561q2i3b7brse70p6ca0hhovujo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArCDBBlhX7gkKcvc1zz42U1WQHoWqXZik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343370750024-0kinm561q2i3b7brse70p6ca0hhovujo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
