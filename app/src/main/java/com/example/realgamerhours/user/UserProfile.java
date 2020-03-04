@@ -1,4 +1,4 @@
-package com.example.realgamerhours;
+package com.example.realgamerhours.user;
 
 public class UserProfile {
     public String username;
@@ -28,4 +28,5 @@ public class UserProfile {
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
+
 }

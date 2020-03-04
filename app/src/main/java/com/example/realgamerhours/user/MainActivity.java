@@ -1,4 +1,4 @@
-package com.example.realgamerhours;
+package com.example.realgamerhours.user;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.realgamerhours.HomepageActivity;
+import com.example.realgamerhours.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(user != null){
             finish();
-            startActivity(new Intent(MainActivity.this, Homepage.class));
+            startActivity(new Intent(MainActivity.this, HomepageActivity.class));
         }
 
         btmLogin.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     progressDialog.dismiss();
                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, Homepage.class));
+                    startActivity(new Intent(MainActivity.this, HomepageActivity.class));
                 }else{
                     Toast.makeText(MainActivity.this, "Please enter the correct email and password", Toast.LENGTH_SHORT).show();
                     counter--;

@@ -1,4 +1,4 @@
-package com.example.realgamerhours;
+package com.example.realgamerhours.event;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import com.example.realgamerhours.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

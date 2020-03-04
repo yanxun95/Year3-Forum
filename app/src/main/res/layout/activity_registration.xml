@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    tools:context=".user.RegistrationActivity">
 
     <EditText
-        android:id="@+id/editUsername"
+        android:id="@+id/profileUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -16,8 +16,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintVertical_bias="0.125" />
 
     <EditText
         android:id="@+id/email"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editUsername"
+        app:layout_constraintTop_toBottomOf="@+id/profileUsername"
         app:layout_constraintVertical_bias="0.056" />
 
     <EditText
@@ -82,16 +82,18 @@
         app:layout_constraintTop_toBottomOf="@+id/btmRegister"
         app:layout_constraintVertical_bias="0.146" />
 
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Event Planner"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintVertical_bias="0.126" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

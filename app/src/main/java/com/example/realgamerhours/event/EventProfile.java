@@ -1,4 +1,4 @@
-package com.example.realgamerhours;
+package com.example.realgamerhours.event;
 
 public class EventProfile {
     public String eventName;

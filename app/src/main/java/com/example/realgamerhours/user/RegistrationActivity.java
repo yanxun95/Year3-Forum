@@ -1,4 +1,4 @@
-package com.example.realgamerhours;
+package com.example.realgamerhours.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,13 +6,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.realgamerhours.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -30,8 +30,8 @@ public class RegistrationActivity extends AppCompatActivity{
     private EditText username, email, password, rePassword;
     private TextView userLogin;
     private Button btnRegister;
-    private ImageView userProfilePic;
     private FirebaseAuth firebaseAuth;
+
     String name, userEmail, userPassword, reUserPassword;
 
     @Override
@@ -59,7 +59,7 @@ public class RegistrationActivity extends AppCompatActivity{
                             if(task.isSuccessful()){
                                 sendUserData();
                                 firebaseAuth.signOut();
-                                Toast.makeText(RegistrationActivity.this, "RegistrationActivity Successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegistrationActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
                             }else{
                                 FirebaseAuthException e = (FirebaseAuthException )task.getException();
@@ -82,8 +82,7 @@ public class RegistrationActivity extends AppCompatActivity{
     }
 
     private void setupUI(){
-        userProfilePic = (ImageView)findViewById(R.id.profilePic);
-        username = (EditText)findViewById(R.id.editUsername);
+        username = (EditText)findViewById(R.id.profileUsername);
         email = (EditText)findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
         rePassword = (EditText)findViewById(R.id.reEnterPassword);

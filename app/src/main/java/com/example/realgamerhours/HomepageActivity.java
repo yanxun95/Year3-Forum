@@ -13,15 +13,20 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.realgamerhours.calendar.CalendarActivity;
+import com.example.realgamerhours.event.EventActivity;
+import com.example.realgamerhours.forum.forumHomepageActivity;
 import com.example.realgamerhours.map.MapActivity;
+import com.example.realgamerhours.user.MainActivity;
+import com.example.realgamerhours.user.ProfileActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Homepage extends AppCompatActivity {
+public class HomepageActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private Button btnEvent;
+    private Button btnEvent, btnCalendar, btnMap, btnPost;
 
     public static final String TAG = "HomePage";
     //handle error if we don't have the correct version
@@ -37,29 +42,44 @@ public class Homepage extends AppCompatActivity {
         if(checkVersion()){
             init();
         }
-
-        btnEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Homepage.this, EventActivity.class));
-
-            }
-        });
-
     }
 
     private void setupUI(){
         btnEvent = (Button)findViewById(R.id.btnEvent);
-
+        btnCalendar = (Button)findViewById(R.id.btnCalendar);
+        btnMap = (Button)findViewById(R.id.btnMap);
+        btnPost = (Button)findViewById(R.id.btnForum);
     }
 
     private void init(){
-        Button btnMap = (Button)findViewById(R.id.btnMap);
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Homepage.this, MapActivity.class));
+                startActivity(new Intent(HomepageActivity.this, MapActivity.class));
                 //startActivity(intent);
+            }
+        });
+
+        btnEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomepageActivity.this, EventActivity.class));
+
+            }
+        });
+
+        btnCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomepageActivity.this, CalendarActivity.class));
+
+            }
+        });
+
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomepageActivity.this, forumHomepageActivity.class));
             }
         });
     }
@@ -67,7 +87,7 @@ public class Homepage extends AppCompatActivity {
     private boolean checkVersion(){
         Log.d(TAG, "checkVersion: checking google services version");
 
-        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(Homepage.this);
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(HomepageActivity.this);
 
         if(available == ConnectionResult.SUCCESS) {
             //everything is ready to go
@@ -75,7 +95,7 @@ public class Homepage extends AppCompatActivity {
             return true;
         }else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)) {
             Log.d(TAG, "checkVersion: an error occurred");
-            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(Homepage.this, available, ERROR_DIALOG_REQUEST);
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(HomepageActivity.this, available, ERROR_DIALOG_REQUEST);
         }else{
             Toast.makeText(this, "Error on checkVersion", Toast.LENGTH_LONG).show();
         }
@@ -85,9 +105,10 @@ public class Homepage extends AppCompatActivity {
     private void Logout(){
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(Homepage.this, MainActivity.class));
+        startActivity(new Intent(HomepageActivity.this, MainActivity.class));
     }
 
+    //create the menu on top of the right
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -95,16 +116,17 @@ public class Homepage extends AppCompatActivity {
         return true;
     }
 
+    //handle the click event on the menu
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
             case R.id.logoutMenu:{
                 Logout();
-                //startActivity(new Intent(Homepage.this, MainActivity.class));
+                //startActivity(new Intent(HomepageActivity.this, MainActivity.class));
             }
             case R.id.profileMenu:
-                startActivity(new Intent(Homepage.this, ProfileActivity.class));
+                startActivity(new Intent(HomepageActivity.this, ProfileActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
