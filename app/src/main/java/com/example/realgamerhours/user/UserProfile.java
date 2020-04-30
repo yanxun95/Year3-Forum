@@ -21,7 +21,7 @@ public class UserProfile {
         this.username = username;
     }
 
-    public String getUserEmail() {
+        public String getUserEmail() {
         return userEmail;
     }
 

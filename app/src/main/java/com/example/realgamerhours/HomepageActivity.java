@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.realgamerhours.calendar.CalendarActivity;
 import com.example.realgamerhours.event.EventActivity;
@@ -49,6 +50,9 @@ public class HomepageActivity extends AppCompatActivity {
         btnCalendar = (Button)findViewById(R.id.btnCalendar);
         btnMap = (Button)findViewById(R.id.btnMap);
         btnPost = (Button)findViewById(R.id.btnForum);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Homepage");
     }
 
     private void init(){

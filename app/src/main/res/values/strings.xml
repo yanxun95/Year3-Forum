@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">Event Planner</string>
 
     <string name="google_map_API_key">AIzaSyAqTLmOXQzhr2g4EzB_9q1VC8cAUn10vIw</string>
     <string name="event_date">Event Date:</string>
     <string name="event_address">Event Address:</string>
     <string name="event_name">Event Name:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

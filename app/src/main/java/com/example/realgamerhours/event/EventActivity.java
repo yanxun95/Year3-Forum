@@ -123,14 +123,14 @@ public class EventActivity extends ListActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-//                        Uri myURI = Uri.parse(TAG_IMAGE);
-//                        Bitmap bmp = null;
-//                        try {
-//                            bmp = BitmapFactory.decodeStream(getContentResolver().openInputStream(myURI));
-//                        } catch (FileNotFoundException e) {
-//                            e.printStackTrace();
-//                        }
-//                        imageView.setImageBitmap(bmp);
+/*                        Uri myURI = Uri.parse(TAG_IMAGE);
+                        Bitmap bmp = null;
+                        try {
+                            bmp = BitmapFactory.decodeStream(getContentResolver().openInputStream(myURI));
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        imageView.setImageBitmap(bmp);*/
                         ListAdapter adapter = new SimpleAdapter(EventActivity.this, eventList, R.layout.item_list,
                                 new String[]{TAG_LINK, TAG_TITLE, TAG_ADDRESS, TAG_DATE},
                                 new int[]{R.id.linkList, R.id.nameList, R.id.addressList, R.id.dateList });

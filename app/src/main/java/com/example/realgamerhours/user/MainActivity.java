@@ -72,26 +72,30 @@ public class MainActivity extends AppCompatActivity {
 
     private void validateLogin (String userEmail, String password){
 
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
+        if(userEmail.isEmpty()|| password.isEmpty()){
+            Toast.makeText(MainActivity.this, "Email or password cannot be empty. ", Toast.LENGTH_SHORT).show();
+        }else{
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(userEmail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    progressDialog.dismiss();
-                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, HomepageActivity.class));
-                }else{
-                    Toast.makeText(MainActivity.this, "Please enter the correct email and password", Toast.LENGTH_SHORT).show();
-                    counter--;
-                    numAttemptLeft.setText("Number of incorrect attempts: " + counter);
-                    progressDialog.dismiss();
-                    if(counter == 0){
-                        btmLogin.setEnabled(false);
+            firebaseAuth.signInWithEmailAndPassword(userEmail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        progressDialog.dismiss();
+                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, HomepageActivity.class));
+                    }else{
+                        Toast.makeText(MainActivity.this, "Please enter the correct email and password", Toast.LENGTH_SHORT).show();
+                        counter--;
+                        numAttemptLeft.setText("Number of incorrect attempts: " + counter);
+                        progressDialog.dismiss();
+                        if(counter == 0){
+                            btmLogin.setEnabled(false);
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
 }
