@@ -149,7 +149,7 @@ public class EventActivity extends ListActivity {
         protected void onPostExecute(Boolean event) {
             progressBar.setVisibility(View.GONE);
             for(HashMap<String, String> s: eventList){
-                Log.d(TAG, TAG_TITLE); // ask debby y output total line instead of all of it
+                Log.d(TAG, TAG_TITLE);
             }
         }
     }
